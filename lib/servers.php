@@ -1,0 +1,38 @@
+﻿<?php
+$servers=array();
+$server = array ();
+$server["serverId"] = 11011;
+$server["serverHost"] = "203.195.193.136";
+$server["serverPort"] = 8191;
+$server["ip"] = "203.195.193.136";
+$server["port"] = 8181; 
+$server["name"] = "应用宝1服";
+$server["status"] = 1; 
+$server["comment"] = "服务器正在停机维护，预计10分钟后恢复运作!";  
+$server["snakeId"] = 1111;
+$server["snake_onlines"] = 0;
+$server["eagle_onlines"] = 0;
+$server["snake_max1"] = 1500;
+$server["eagle_max1"] = 1500;
+$server["snake_max2"] = 2000;
+$server["eagle_max2"] = 2000;
+array_push ($servers, $server);
+$server = array ();
+$server["serverId"] = 11001;
+$server["serverHost"] = "203.195.193.136";
+$server["serverPort"] = 8190;
+$server["ip"] = "203.195.193.136";
+$server["port"] = 8180; 
+$server["name"] = "安卓零·纪元";
+$server["status"] = 1; 
+$server["comment"] = "服务器正在停机维护，预计10分钟后恢复运作!";  
+$server["snakeId"] = 1101;
+$server["snake_onlines"] = 0;
+$server["eagle_onlines"] = 0;
+$server["snake_max1"] = 1500;
+$server["eagle_max1"] = 1500;
+$server["snake_max2"] = 2000;
+$server["eagle_max2"] = 2000;
+array_push ($servers, $server);
+return $servers;
+?>
