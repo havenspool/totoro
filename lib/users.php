@@ -11,6 +11,11 @@ function current_time( $type, $gmt = 0 ) {
     }
 }
 
+function get_users_byuserId($userId) {
+	global $db;
+	return $db->get_results("SELECT * FROM `users` WHERE `id`  = $userId");
+}
+
 function get_users($userName,$channel) {
 	global $db;
 	return $db->get_results("SELECT * FROM `users` WHERE `name`  = '$userName' AND `channel`  =  '$channel'");
