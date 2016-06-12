@@ -1,8 +1,8 @@
 <?php
 // ** MySQL settings ** //
-define('DB_NAME', 'game_ios_user');    // The name of the database
+define('DB_NAME', 'miser');    // The name of the database
 define('DB_USER', 'root');     // Your MySQL username
-define('DB_PASSWORD', 'it1S4Qn5xW7y'); // ...and password
+define('DB_PASSWORD', 'havens'); // ...and password
 define('DB_HOST', '127.0.0.1');    // 99% chance you won't need to change this value
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');

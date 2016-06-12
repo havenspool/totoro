@@ -17,7 +17,6 @@ $retainStr = isset($_GET['retainStr']) ? $_GET['retainStr'] : NULL;
 $result = Array();
 $result["cmd"] = "user_login";
 
-
 $users = get_users($userName,$channel);
 if ($users == null) {
     $_user = insert_user($userName,$channel,md5($userPwd.$userName));
@@ -36,7 +35,6 @@ if ($users == null) {
 }
 
 function login_succ($result,$userName,$user,$redis){
-	$rooms=require_once( './onlines.php');
 	$loginTime = current_time('timestamp',1);
 	$token = md5($userName.$loginTime);
 	$userInfo = Array();
@@ -44,8 +42,8 @@ function login_succ($result,$userName,$user,$redis){
 	$userInfo["token"] = $token;
 	$userInfo["loginTime"] = $loginTime;
 	$userInfo["unlockTime"] = $user->unlockTime;
-    $userInfo["coin"] = $user->coin;
-	$userInfo["rooms"] = $rooms;
+    $userInfo["coin"] = 0;
+
 	$tokenkey='login_'.$user_id;
 	$tokenvalue=$token . "," . $loginTime;
 	send_token_to_local_redis($tokenkey, $tokenvalue,$redis);

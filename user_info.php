@@ -11,19 +11,19 @@ $userId = isset($_GET['userId']) ? $_GET['userId'] : 0;
 $token = isset($_GET['token']) ? $_GET['token'] : NULL;
 
 $result = Array();
-$result["cmd"] = "use_info";
+$result["cmd"] = "user_info";
 
-$users = get_users($userId);
+$users = get_users_byuserId($userId);
 if ($users == null) {
     return_result($result,false,1001);
 } else {
-    user_info($result,$userName,$users[0],$redis);
+    user_info($result,$userId);
 }
 
-function user_info($result,$userName,$user,$redis){
+function user_info($result,$userId){
 	$userInfo = Array();
-	$userInfo["userId"] = $user->id;
-    $userInfo["coin"] = $user->coin;
+	$userInfo["userId"] = $userId ;
+    $userInfo["coin"] = 100;
 	$result["userInfo"] = $userInfo;
 	return_result($result,true,null);
 }
